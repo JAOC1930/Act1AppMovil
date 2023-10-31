@@ -1,13 +1,20 @@
 package com.example.act1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /* Lenguaje de koptlin */
+        llamarBoton()
+        SaltarVen2()
+        /*
+
+         /* Lenguaje de koptlin */
         /*
         var firtVariable = "Hola mundo"
         println(firtVariable)
@@ -91,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         println(myMap["Samantha"])
 
         myMap.remove("Samantha")
-        */
+
 
         /* Ejercicio 1 */
 
@@ -154,13 +161,31 @@ class MainActivity : AppCompatActivity() {
             for (persona in mayoresDeEdadSolteros) {
                 println("Nombre: ${persona.nombre}, Cédula: ${persona.cedula}, Edad: ${persona.edad}")
             }
-        }
-    }
+        }*/
 
+         */
+    }
+/*
     fun redondearAMultiploDeDiez(c: Int): Int {
         return (c + 9) / 10 * 10
     }
-
+*/
+/*
     data class Person(val nombre: String, val cedula: String, val edad: Int, val estadoCivil: String)
+*/
+    fun llamarBoton(){
+        val boton1= findViewById<Button>(R.id.btn_01)
+        val tw_01= findViewById<TextView>(R.id.tw_01)
+        boton1.setOnClickListener(){
+            tw_01.setText("Hola este es un nuevo mensaje")
+        }
+    }
+    fun SaltarVen2(){
+        val botom2 = findViewById<Button>(R.id.btn_02)
+        botom2.setOnClickListener(){
+            val saltar:Intent=Intent(this,Ventana2::class.java)
+            startActivity(saltar)
+        }
 
+    }
 }
